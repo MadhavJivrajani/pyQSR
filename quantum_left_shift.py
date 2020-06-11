@@ -106,7 +106,7 @@ class QuantumLeftShift:
                                   range(self.num_data_qubits + self.num_data_qubits + 1))
 
     def get_register_state(self):
-        """Performs a measure in the |0> basis on each of the data qubits
+        """Performs a measurement in the |0> basis on each of the data qubits
         and returns the counts of the measurement.
         """
         self.shift_circuit.barrier(range(self.num_data_qubits + self.num_data_qubits + 1))
