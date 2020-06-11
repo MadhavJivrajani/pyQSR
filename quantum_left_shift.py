@@ -32,7 +32,7 @@ class QuantumLeftShift:
 
         Args:
             data_qubits  :   The number of data qubits to be alloted. Needs to be equal to
-                            length of seed.
+                             length of seed.
             seed         :   Initial value the quantum shift register should start with.
             circular     :   Flag to indicate if the shifts are circular in nature or not.
 
