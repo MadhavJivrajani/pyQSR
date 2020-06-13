@@ -25,7 +25,7 @@ python3 test/tests.py
 To creare a quantum shift register with 4 data qubits which is circular in nature:  
 
 ```py
-from pyQSR.quantum_left_shift import QuantumLeftShift
+from pyQSR.quantum_left_shift import *
 
 qsrCirc = QuantumLeftShift(4, "1011", circular=True) #create the shift register.
 
@@ -75,6 +75,36 @@ Data qubits: 4
 Initial seed: 1011
 Shifts performed: 3
 Circular: True
+"""
+
+#to see what the 'Circular Left Shift' gate looks like
+circLeftShift = qsrCirc.construct_shift_gate()
+
+#4 is the number of data qubits, an additional 4 ancillary ones required and one extra control.
+qc = QuantumCircuit(4 + 4 + 1) 
+qc.append(circLeftShift, range(4 + 4 + 1))
+
+print(qc.decompose())
+"""
+                               ┌───┐     
+q_0: ───────────────────X───■──┤ X ├──■──
+                        │   │  └─┬─┘  │  
+q_1: ────────────────X──X───┼────┼────┼──
+                     │      │    │    │  
+q_2: ─────────────X──X──────┼────┼────┼──
+                  │         │    │    │  
+q_3: ──────────X──X─────────┼────┼────┼──
+               │          ┌─┴─┐  │  ┌─┴─┐
+q_4: ───────X──X──────────┤ X ├──■──┤ X ├
+            │             └───┘  │  └───┘
+q_5: ────X──X────────────────────┼───────
+         │                       │       
+q_6: ─X──X───────────────────────┼───────
+      │                          │       
+q_7: ─X──────────────────────────┼───────
+                                 │       
+q_8: ────────────────────────────■───────
+
 """
 ```
 
