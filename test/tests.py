@@ -1,19 +1,14 @@
 # -*- coding: utf-8 -*-
-# pylint: disable=import-error
-# pylint: disable=wrong-import-position
 # pylint: disable=invalid-name
 
 """Unit tests for quantum shift registers."""
 
 import unittest
 from random import randint
-import sys
 from ddt import ddt, data, unpack
 from qiskit.circuit.exceptions import CircuitError
 
-sys.path.append("../pyQSR")
-
-from quantum_left_shift import QuantumLeftShift
+from pyQSR.quantum_left_shift import QuantumLeftShift
 
 @ddt
 class TestQuantumLeftShift(unittest.TestCase):

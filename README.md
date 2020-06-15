@@ -18,7 +18,7 @@ git clone https://github.com/MadhavJivrajani/pyQSR.git
 ### Running tests  
 You can run the tests as follows:
 ```sh
-python3 test/tests.py
+python3 -m unittest discover -s test -p 'tests.py'
 ```  
   
 ### Example
