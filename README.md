@@ -20,7 +20,8 @@ You can run the tests as follows:
 ```sh
 python3 -m unittest discover -s test -p 'tests.py'
 ```  
-  
+### Tutorial
+A comprehensive tutorial explaining stuff can be found [here](https://github.com/QForestCommunity/launchpad/tree/master/tutorials) :smile:
 ### Example
 To creare a quantum shift register with 4 data qubits which is circular in nature:  
 
